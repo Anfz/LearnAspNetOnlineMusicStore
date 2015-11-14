@@ -15,12 +15,14 @@ namespace MvcMusicStudio.Controllers
         private MvcMusicStudioContext db = new MvcMusicStudioContext();
 
         // GET: Albums
+        [Route("Albums/All")]
         public ActionResult Index()
         {
             return View(db.Albums.ToList());
         }
 
         // GET: Albums/Details/5
+        [Route("Album/{id:int}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,7 +37,16 @@ namespace MvcMusicStudio.Controllers
             return View(album);
         }
 
+        public ActionResult DisplayByArtist(int artisitID)
+        {
+            //imagine code here 
+
+            return View();
+        }
+
         // GET: Albums/Create
+        // Audtomatically uses get 
+        // This displays the form to the user
         public ActionResult Create()
         {
             return View();
@@ -44,9 +55,11 @@ namespace MvcMusicStudio.Controllers
         // POST: Albums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Accepts Input form the user aka POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumID,Title")] Album album)
+        //[Authorize()]
+        public ActionResult Create( Album album)
         {
             if (ModelState.IsValid)
             {
