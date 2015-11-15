@@ -14,6 +14,7 @@ namespace MvcMusicStudio.Controllers
     {
         private MvcMusicStudioContext db = new MvcMusicStudioContext();
 
+
         // GET: Albums
         [Route("Albums/All")]
         public ActionResult Index()
@@ -37,7 +38,7 @@ namespace MvcMusicStudio.Controllers
             return View(album);
         }
 
-        public ActionResult DisplayByArtist(int artisitID)
+        public ActionResult DisplayByArtist()
         {
             //imagine code here 
 

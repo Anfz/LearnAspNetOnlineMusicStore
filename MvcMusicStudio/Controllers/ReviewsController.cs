@@ -37,6 +37,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Reviews/Create
+        [Authorize()]
         public ActionResult Create()
         {
             ViewBag.AlbumId = new SelectList(db.Albums, "AlbumID", "Title");
