@@ -17,18 +17,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("CM2SaR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
-                        <li>@Html.ActionLink("Albums", "Index", "Albums")</li>
-                        <li>@Html.ActionLink("Artists", "Index", "Artists")</li>
+                        <li class="dropdown">
+                            <a href="#" id="album-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">Albums</a>
+                            <ul class="dropdown-menu" aria-labelledby="album-dropdown">
+                                <li>@Html.ActionLink("All", "Index", "Albums")</li>
+                                <li>@Html.ActionLink("Create", "Create", "Albums")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" id="artist-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">Artist</a>
+                            <ul class="dropdown-menu" aria-labelledby="artist-dropdown">
+                                <li>@Html.ActionLink("All", "Index", "Artists")</li>
+                                <li>@Html.ActionLink("Create", "Create", "Artists")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" id="review-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="dropdown-toggle">Reviews</a>
+                            <ul class="dropdown-menu" aria-labelledby="review-dropdown">
+                                <li>@Html.ActionLink("All", "Index", "Reviews")</li>
+                                <li>@Html.ActionLink("Create", "Create", "Reviews")</li>
+                            </ul>
+                        </li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

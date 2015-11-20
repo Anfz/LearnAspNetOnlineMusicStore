@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+ul.dropdown-menu {
+    border-color:#c85e17;
+    border-style: solid;
+    border-width: 1px;
+}
