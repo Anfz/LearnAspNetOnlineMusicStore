@@ -36,11 +36,12 @@ namespace MvcMusicStudio.Controllers
             return View(review);
         }
 
+        
         // GET: Reviews/Create
         [Authorize()]
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumID", "Title");
+            ViewBag.AlbumId = new SelectList(db.Albums, "AlbumID", "Title", id);
             return View();
         }
 
@@ -59,6 +60,7 @@ namespace MvcMusicStudio.Controllers
             }
 
             ViewBag.AlbumId = new SelectList(db.Albums, "AlbumID", "Title", review.AlbumId);
+
             return View(review);
         }
 
