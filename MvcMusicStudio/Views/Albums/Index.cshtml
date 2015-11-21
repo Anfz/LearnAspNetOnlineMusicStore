@@ -3,11 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+@using MvcMusicStudio.HtmlHelpers;
+<h2>Albums</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create an Album", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,7 +23,8 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AlbumID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.AlbumID }) |
+            @CustomSharedHtmlHelpers.TableActionLink(Html, "Edit", "Edit", new { id = item.AlbumID}, new object { }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID }) |
             @Html.ActionLink("Create Review", "Create", "Reviews", new { id = item.AlbumID }, new { id = item.AlbumID })

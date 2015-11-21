@@ -31,10 +31,13 @@ namespace MvcMusicStudio.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Album album = db.Albums.Find(id);
+            album.Review = db.Reviews.Where(w => w.AlbumId == id).ToList();
             if (album == null)
             {
                 return HttpNotFound();
             }
+
+
             return View(album);
         }
 

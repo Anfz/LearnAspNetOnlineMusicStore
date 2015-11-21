@@ -24,3 +24,39 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+<h2>Reviews</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Review[0].Contents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Review[0].ReviewerEmail)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Review)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewerEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReviewID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })
+            </td>
+        </tr>
+    }
+
+</table>
