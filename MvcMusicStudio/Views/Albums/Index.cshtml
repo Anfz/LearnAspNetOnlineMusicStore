@@ -24,7 +24,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.AlbumID }) |
-            @CustomSharedHtmlHelpers.TableActionLink(Html, "Edit", "Edit", new { id = item.AlbumID}, new object { }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AlbumID }) |
             @Html.ActionLink("Create Review", "Create", "Reviews", new { id = item.AlbumID }, new { id = item.AlbumID })
