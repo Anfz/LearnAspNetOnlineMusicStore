@@ -67,7 +67,6 @@ C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\bin\Microsoft.Owin.Secur
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.csprojResolveAssemblyReference.cache
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.dll
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.pdb
-C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations.InitialCreate.resources
+C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations.Reset.resources
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.csproj.GenerateResource.Cache
-C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations.Initial.resources
-C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations._20151113_1624.resources
+C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations.trackalbumfix1.resources

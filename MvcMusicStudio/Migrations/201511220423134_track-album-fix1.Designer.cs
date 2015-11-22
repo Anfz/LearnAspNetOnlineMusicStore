@@ -7,13 +7,13 @@ namespace MvcMusicStudio.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class trackalbumfix1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(trackalbumfix1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511130555586_InitialCreate"; }
+            get { return "201511220423134_track-album-fix1"; }
         }
         
         string IMigrationMetadata.Source

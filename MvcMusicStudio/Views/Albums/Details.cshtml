@@ -60,3 +60,43 @@
     }
 
 </table>
+
+
+<h2>Tracks</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (Model.Tracks.Count > 0)
+{
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tracks[0].Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tracks[0].Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var track in Model.Tracks)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => track.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => track.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = track.TrackID }) |
+                @Html.ActionLink("Details", "Details", new { id = track.TrackID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = track.TrackID })
+            </td>
+        </tr>
+    }
+
+</table> 
+}

@@ -10,7 +10,6 @@ namespace MvcMusicStudio.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MvcMusicStudio.Models.MvcMusicStudioContext";
         }
 
         protected override void Seed(MvcMusicStudio.Models.MvcMusicStudioContext context)

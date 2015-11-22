@@ -24,5 +24,7 @@ namespace MvcMusicStudio.Models
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Artist> Artists { get; set; }
+
+        public System.Data.Entity.DbSet<MvcMusicStudio.Models.Track> Tracks { get; set; }
     }
 }

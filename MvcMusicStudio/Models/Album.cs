@@ -11,5 +11,9 @@ namespace MvcMusicStudio.Models
         public Artist Artist { get; set; }
 
         public virtual List<Review> Review { get; set; } 
+
+        public virtual List<Track> Tracks { get; set; }
+
+
     }
 }
