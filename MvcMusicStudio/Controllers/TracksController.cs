@@ -37,6 +37,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Tracks/Create
+        [Authorize()]
         public ActionResult Create()
         {
             ViewBag.AlbumId = new SelectList(db.Albums, "AlbumID", "Title");
@@ -48,6 +49,7 @@ namespace MvcMusicStudio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Create([Bind(Include = "TrackID,Title,Description,AlbumId")] Track track)
         {
             if (ModelState.IsValid)
@@ -62,6 +64,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Tracks/Edit/5
+        [Authorize()]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +85,7 @@ namespace MvcMusicStudio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Edit([Bind(Include = "TrackID,Title,Description,AlbumId")] Track track)
         {
             if (ModelState.IsValid)
@@ -95,6 +99,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Tracks/Delete/5
+        [Authorize()]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +117,7 @@ namespace MvcMusicStudio.Controllers
         // POST: Tracks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult DeleteConfirmed(int id)
         {
             Track track = db.Tracks.Find(id);

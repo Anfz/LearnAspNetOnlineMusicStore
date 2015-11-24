@@ -50,6 +50,7 @@ namespace MvcMusicStudio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Create([Bind(Include = "ReviewID,AlbumId,Contents,ReviewerEmail")] Review review)
         {
             if (ModelState.IsValid)
@@ -65,6 +66,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Reviews/Edit/5
+        [Authorize()]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +87,7 @@ namespace MvcMusicStudio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Edit([Bind(Include = "ReviewID,AlbumId,Contents,ReviewerEmail")] Review review)
         {
             if (ModelState.IsValid)
@@ -98,6 +101,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Reviews/Delete/5
+        [Authorize()]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,6 +119,7 @@ namespace MvcMusicStudio.Controllers
         // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult DeleteConfirmed(int id)
         {
             Review review = db.Reviews.Find(id);

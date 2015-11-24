@@ -51,6 +51,7 @@ namespace MvcMusicStudio.Controllers
         // GET: Albums/Create
         // Audtomatically uses get 
         // This displays the form to the user
+        [Authorize()]
         public ActionResult Create()
         {
             return View();
@@ -62,7 +63,7 @@ namespace MvcMusicStudio.Controllers
         // Accepts Input form the user aka POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Authorize()]
+        [Authorize()]
         public ActionResult Create( Album album)
         {
             if (ModelState.IsValid)
@@ -76,6 +77,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Albums/Edit/5
+        [Authorize()]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -95,6 +97,7 @@ namespace MvcMusicStudio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Edit([Bind(Include = "AlbumID,Title")] Album album)
         {
             if (ModelState.IsValid)
@@ -107,6 +110,7 @@ namespace MvcMusicStudio.Controllers
         }
 
         // GET: Albums/Delete/5
+        [Authorize()]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -124,6 +128,7 @@ namespace MvcMusicStudio.Controllers
         // POST: Albums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult DeleteConfirmed(int id)
         {
             Album album = db.Albums.Find(id);
