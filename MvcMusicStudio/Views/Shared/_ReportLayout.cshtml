@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderSection("Title", false)
+<p>@RenderSection("CreateButton", false)</p>
+<table class="table table-striped">
+    @RenderSection("Report", false)
+</table>
+@RenderBody()
+
+
+@section scripts {
+    @RenderSection("scripts", required: false)
+}
+
