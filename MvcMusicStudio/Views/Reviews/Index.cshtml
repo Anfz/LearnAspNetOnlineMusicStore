@@ -1,52 +1,36 @@
-﻿@model IEnumerable<MvcMusicStudio.Models.Review>
-@{Layout= "~/Views/Shared/_ReportLayout.cshtml";}
+﻿@using NonFactors.Mvc.Grid
+@model IEnumerable<MvcMusicStudio.Models.Review>
+
 @{
     ViewBag.Title = "Index";
 }
 
-@section Title {
-Reviews
-}
-
-@section CreateButton {
+<h2>Reviews</h2>
+<p>
     @Html.ActionLink("Create New", "Create")
-}
+</p>
 
-@section Report {
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Album.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contents)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReviewerEmail)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    @foreach (var item in Model)
+
+<div class="mvc-grid">
+@(Html
+    .Grid(Model)
+    .Build(columns =>
     {
-        <tbody>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Album.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Contents)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReviewerEmail)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ReviewID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })
-                </td>
-            </tr>
-        </tbody>
-    }
+        columns.Add(model => model.Album.Title).Titled("Name");
+        columns.Add(model => model.Contents).Titled("Surname");
+        columns.Add(model => model.ReviewerEmail).Titled("Age");
+    })
+    .Filterable()
+    .Sortable()
+    )
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/MvcGrid");
 
+    <script>
+        $('.mvc-grid').mvcgrid();
+    </script>
+}
+@section styles {
+    @Styles.Render("~/Content/MvcGrid")
 }
