@@ -11,6 +11,10 @@
 .mvc-grid-table .mvc-grid-header {
     background-clip: padding-box;
     position: relative;
+    background-color: #df691a;
+    border-color: #bf5a16;
+    border-style:solid;
+    border-width:1px;
 }
 
     .mvc-grid-table .mvc-grid-header.sortable,
@@ -70,6 +74,7 @@
     border-radius: 4px;
     z-index: 1000;
     display: none;
+    color:black;
 }
 
     .mvc-grid-popup.open {

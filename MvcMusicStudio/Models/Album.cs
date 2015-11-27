@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MvcMusicStudio.Models
 {
@@ -6,6 +7,7 @@ namespace MvcMusicStudio.Models
     {
         public int AlbumID { get; set; }
 
+        [Display(Name = "Album Title")]
         public string Title { get; set; }
 
         public Artist Artist { get; set; }

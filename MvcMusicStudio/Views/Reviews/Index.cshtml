@@ -16,12 +16,18 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add(model => model.Album.Title).Titled("Name");
-        columns.Add(model => model.Contents).Titled("Surname");
-        columns.Add(model => model.ReviewerEmail).Titled("Age");
+        columns.Add(model => model.Album.Title);
+        columns.Add(model => model.Contents);
+        columns.Add(model => model.ReviewerEmail);
     })
     .Filterable()
     .Sortable()
+    .Css("table-condensed table-striped")
+    .Pageable(pager =>
+    {
+        pager.InitialPage = 1;
+        pager.RowsPerPage = 5;
+    })
     )
 </div>
 @section scripts {

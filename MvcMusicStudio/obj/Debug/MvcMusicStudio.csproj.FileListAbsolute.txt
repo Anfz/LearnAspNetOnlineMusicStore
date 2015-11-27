@@ -70,3 +70,4 @@ C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.csproj.GenerateResource.Cache
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.Migrations.trackalbumfix1.resources
 C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\bin\NonFactors.Mvc.Grid.dll
+C:\personal\visual studio\MvcMusicStudio\MvcMusicStudio\obj\Debug\MvcMusicStudio.csprojResolveAssemblyReference.cache

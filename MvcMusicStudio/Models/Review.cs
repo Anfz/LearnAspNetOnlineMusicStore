@@ -10,6 +10,7 @@ namespace MvcMusicStudio.Models
 
         public virtual Album Album { get; set; }
 
+        [Display(Name = "Review Details")]
         public string Contents { get; set; }
 
         [Required()]
