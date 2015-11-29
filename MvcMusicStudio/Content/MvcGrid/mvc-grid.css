@@ -13,8 +13,8 @@
     position: relative;
     background-color: #df691a;
     border-color: #bf5a16;
-    border-style:solid;
-    border-width:1px;
+    border-style: solid;
+    border-width: 1px;
 }
 
     .mvc-grid-table .mvc-grid-header.sortable,
@@ -74,7 +74,7 @@
     border-radius: 4px;
     z-index: 1000;
     display: none;
-    color:black;
+    color: black;
 }
 
     .mvc-grid-popup.open {
@@ -158,4 +158,21 @@
 
 .mvc-grid-pager li {
     cursor: pointer;
+}
+
+ul.pagination {
+    margin:1px;
+
+
+}
+
+.panel {
+    background-color: transparent;
+    border: 1px solid #bf5a16;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.panel-title {
+    padding: 8px;
 }

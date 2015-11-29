@@ -5,7 +5,7 @@ namespace MvcMusicStudio.Models
     public class Review
     {
         public int ReviewID { get; set; }
-
+        
         public int AlbumId { get; set; }
 
         public virtual Album Album { get; set; }
