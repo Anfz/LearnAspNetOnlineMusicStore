@@ -1,34 +1,39 @@
-﻿@model IEnumerable<MvcMusicStudio.Models.Artist>
-
+﻿@using NonFactors.Mvc.Grid
+@model IEnumerable<MvcMusicStudio.Models.Artist>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Artist";
 }
-
-
-<h2>Amazing Artists</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistID })
-        </td>
-    </tr>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="pull-left panel-title">Artist</h2>
+        @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary pull-right" })
+        <div class="clearfix"></div>
+    </div>
+    @(Html
+            .Grid(Model)
+            .Build(columns =>
+            {
+                columns.Add(model => model.Name);
+                columns.Add(model => Html.ActionLink("Edit", "Edit", new { id = model.ArtistID }, new { @class = "btn pull-right" })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Details", "Details", new { id = model.ArtistID }, new { @class = "btn pull-right" })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Delete", "Delete", new { id = model.ArtistID }, new { @class = "btn pull-right" })).Encoded(false);
+            })
+            .Filterable()
+            .Sortable()
+            .Css("table-striped")
+            .Pageable(pager =>
+            {
+                pager.InitialPage = 1;
+                pager.RowsPerPage = 5;
+            })
+    )
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/MvcGrid")
+    <script>
+        $('.mvc-grid').mvcgrid();
+    </script>
 }
-
-</table>
+@section styles {
+    @Styles.Render("~/Content/MvcGrid")
+}

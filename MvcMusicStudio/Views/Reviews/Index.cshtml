@@ -18,9 +18,9 @@
                 columns.Add(model => model.Album.Title);
                 columns.Add(model => model.Contents);
                 columns.Add(model => model.ReviewerEmail);
-                columns.Add(model => Html.ActionLink("Edit", "Edit", new { id = model.ReviewID })).Encoded(false);
-                columns.Add(model => Html.ActionLink("Details", "Details", new { id = model.ReviewID })).Encoded(false);
-                columns.Add(model => Html.ActionLink("Delete", "Delete", new { id = model.ReviewID })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Edit", "Edit", new { id = model.ReviewID }, new { @class = "btn pull-right" })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Details", "Details", new { id = model.ReviewID }, new { @class = "btn pull-right" })).Encoded(false);
+                columns.Add(model => Html.ActionLink("Delete", "Delete", new { id = model.ReviewID }, new { @class = "btn pull-right" })).Encoded(false);
 
 
             })
